@@ -21,22 +21,14 @@ function formatServiceBreakdown(costs: TotalCosts): string {
   return serviceCostsYesterday.join('\n');
 }
 
-export async function notifySlack(
-  accountAlias: string,
-  costs: TotalCosts,
-  isSummary: boolean,
-  slackToken: string,
-  slackChannel: string
-) {
-  const channel = slackChannel;
-
+export function formatSlackMessage(accountAlias: string, costs: TotalCosts, isSummary: boolean): string {
   const totals = costs.totals;
   const serviceCosts = costs.totalsByService;
 
-  let serviceCostsYesterday = [];
+  let serviceCostsYesterday: string[] = [];
   Object.keys(serviceCosts.yesterday).forEach((service) => {
-    serviceCosts.yesterday[service].toFixed(2);
-    serviceCostsYesterday.push(`${service}: $${serviceCosts.yesterday[service].toFixed(2)}`);
+    const cost = serviceCosts.yesterday[service];
+    serviceCostsYesterday.push(`${service}: $${cost.toFixed(2)}`);
   });
 
   const summary = `> *Account: ${accountAlias}*
@@ -49,13 +41,27 @@ export async function notifySlack(
 
   const breakdown = `
 > *Breakdown by Service:*
-${formatServiceBreakdown(costs)}
+${serviceCostsYesterday.join('\n')}
 `;
 
   let message = `${summary}`;
   if (!isSummary) {
     message += `${breakdown}`;
   }
+
+  return message;
+}
+
+export async function notifySlack(
+  accountAlias: string,
+  costs: TotalCosts,
+  isSummary: boolean,
+  slackToken: string,
+  slackChannel: string
+) {
+  const channel = slackChannel;
+
+  const message = formatSlackMessage(accountAlias, costs, isSummary);
 
   await fetch('https://slack.com/api/chat.postMessage', {
     method: 'post',
@@ -76,4 +82,8 @@ ${formatServiceBreakdown(costs)}
       Authorization: `Bearer ${slackToken}`,
     },
   });
+}
+
+if (process.env.NODE_ENV === 'test') {
+    module.exports = { formatSlackMessage };
 }

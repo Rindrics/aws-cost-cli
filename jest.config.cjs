@@ -9,6 +9,10 @@ var esmModules = [
   "ansi-regex",
   "is-interactive",
   "stdin-discarder",
+  "node-fetch",
+  "data-uri-to-buffer",
+  "fetch-blob",
+  "formdata-poly",
 ];
 
 module.exports = {
