@@ -1,4 +1,6 @@
 ## aws-cost-cli
+
+original author: [`@kamranahmedse`](https://github.com/kamranahmedse)
 > CLI tool to perform cost analysis on your AWS account with Slack integration
 
 ![](.github/images/aws-cost.gif)
