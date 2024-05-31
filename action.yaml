@@ -1,0 +1,70 @@
+name: "AWS Cost CLI"
+
+description: 'Report AWS costs and send notifications to Slack'
+
+branding:
+  icon: 'bar-chart-2'
+  color: '#f09c44'
+
+inputs:
+  profile:
+    description: 'AWS profile to use'
+    required: false
+    default: 'default'
+  access-key:
+    description: 'AWS access key'
+    required: false
+  secret-key:
+    description: 'AWS secret key'
+    required: false
+  session-token:
+    description: 'AWS session token'
+    required: false
+  region:
+    description: 'AWS region'
+    required: false
+    default: 'us-east-1'
+  json:
+    description: 'Get the output as JSON'
+    required: false
+    default: false
+  summary:
+    description: 'Get only the summary without service breakdown'
+    required: false
+    default: false
+  text:
+    description: 'Get the output as plain text (no colors / tables)'
+    required: false
+    default: false
+  slack-token:
+    description: 'Token for the slack integration'
+    required: false
+  slack-channel:
+    description: 'Channel to which the slack integration should post'
+    required: false
+outputs:
+  result:
+    description: 'The result of the AWS cost reporting'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install pnpm
+      run: npm install -g pnpm
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: '.node-version'
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install
+      shell: bash
+
+    - name: Run AWS Cost CLI
+      run: node ./bin/index.js --profile ${{ inputs.profile }} --access-key ${{ inputs.access-key }} --secret-key ${{ inputs.secret-key }} --session-token ${{ inputs.session-token }} --region ${{ inputs.region }} --json ${{ inputs.json }} --summary ${{ inputs.summary }} --text ${{ inputs.text }} --slack-token ${{ inputs.slack-token }} --slack-channel ${{ inputs.slack-channel }}
+      shell: bash
