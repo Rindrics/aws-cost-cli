@@ -4,7 +4,7 @@ description: 'Report AWS costs and send notifications to Slack'
 
 branding:
   icon: 'bar-chart-2'
-  color: '#f09c44'
+  color: 'orange'
 
 inputs:
   profile:
