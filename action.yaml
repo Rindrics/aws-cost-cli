@@ -1,4 +1,4 @@
-name: "AWS Cost CLI"
+name: 'AWS Cost CLI'
 
 description: 'Report AWS costs and send notifications to Slack'
 

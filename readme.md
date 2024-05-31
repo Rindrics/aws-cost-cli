@@ -1,6 +1,7 @@
 ## aws-cost-cli
 
 original author: [`@kamranahmedse`](https://github.com/kamranahmedse)
+
 > CLI tool to perform cost analysis on your AWS account with Slack integration
 
 ![](.github/images/aws-cost.gif)
@@ -15,7 +16,7 @@ npm install -g aws-cost-cli
 
 ## Usage
 
-For the simple usage, just run the command without any options. 
+For the simple usage, just run the command without any options.
 
 ```
 aws-cost
@@ -65,36 +66,43 @@ aws-cost
 To configure the credentials using aws-cli, have a look at the [aws-cli docs](https://github.com/aws/aws-cli#configuration) for more information.
 
 ## Detailed Breakdown
+
 > The default usage is to get the cost breakdown by service
 
 ```bash
 aws-cost
 ```
+
 You will get the following output
 
 ![Default Usage](./.github/images/default-demo.gif)
 
 ## Total Costs
+
 > You can also get the summary of the cost without the service breakdown
 
 ```bash
 aws-cost --summary
 ```
+
 You will get the following output
 
 ![Summary Usage](./.github/images/summary-demo.gif)
 
 ## Plain Text
+
 > You can also get the output as plain text
 
 ```bash
 aws-cost --text
 ```
+
 You will get the following output in response
 
 ![Text Usage](./.github/images/text-usage.png)
 
 ## JSON Output
+
 > You can also get the output as JSON
 
 ```bash
@@ -153,6 +161,7 @@ aws-cost --json
   }
 }
 ```
+
 </details>
 
 ## Slack Integration
