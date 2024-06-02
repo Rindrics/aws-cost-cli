@@ -1,5 +1,16 @@
 # Changelog
 
+## [v0.2.7](https://github.com/Rindrics/aws-cost-cli/compare/0.2.6...v0.2.7) - 2024-06-01
+- Run CI on pull request by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/1
+- Add missing newline by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/2
+- Disable unused pull request template by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/10
+- Take over author to increment semver by rules on this repo by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/14
+- Introduce CI/CD by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/15
+- Correct branding color by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/18
+- Add name of original author by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/19
+- Automate release by `tagpr` by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/20
+- Introduce linter & formatter by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/22
+
 ## [v0.2.6](https://github.com/Rindrics/aws-cost-cli/compare/0.2.6...v0.2.6) - 2024-05-31
 - Run CI on pull request by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/1
 - Add missing newline by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/2
