@@ -24,6 +24,9 @@ inputs:
     description: 'AWS region'
     required: false
     default: 'us-east-1'
+  role-arn:
+    description: 'AWS role ARN to assume'
+    required: false
   json:
     description: 'Get the output as JSON'
     required: false
@@ -66,5 +69,5 @@ runs:
       shell: bash
 
     - name: Run AWS Cost CLI
-      run: node ./bin/index.js --profile ${{ inputs.profile }} --access-key ${{ inputs.access-key }} --secret-key ${{ inputs.secret-key }} --session-token ${{ inputs.session-token }} --region ${{ inputs.region }} --json ${{ inputs.json }} --summary ${{ inputs.summary }} --text ${{ inputs.text }} --slack-token ${{ inputs.slack-token }} --slack-channel ${{ inputs.slack-channel }}
+      run: node ./bin/index.js --profile ${{ inputs.profile }} --access-key ${{ inputs.access-key }} --secret-key ${{ inputs.secret-key }} --session-token ${{ inputs.session-token }} --region ${{ inputs.region }} --role-arn ${{ inputs.role-arn }} --json ${{ inputs.json }} --summary ${{ inputs.summary }} --text ${{ inputs.text }} --slack-token ${{ inputs.slack-token }} --slack-channel ${{ inputs.slack-channel }}
       shell: bash
