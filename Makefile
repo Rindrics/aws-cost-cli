@@ -12,7 +12,7 @@ $(NODE_MODULES):
 
 install: $(NODE_MODULES)
 
-$(BUILD_DIR): $(SRC_FILS) $(NODE_MODULES)
+$(BUILD_DIR): $(SRC_FILES) $(NODE_MODULES)
 	pnpm build
 
 build: $(BUILD_DIR)
