@@ -12,13 +12,13 @@ $(NODE_MODULES):
 
 install: $(NODE_MODULES)
 
-$(BUILD_DIR): $(SRC_FILS) $(NODE_MODULES)
+$(BUILD_DIR): $(SRC_FILES) $(NODE_MODULES)
 	pnpm build
 
 build: $(BUILD_DIR)
 
 run: build
-	node ./bin/index.js --access-key "${ACCESS_KEY}" --secret-key "${SECRET_KEY}" --role-arn "${ROLE_ARN}" --region ap-northeast-1 -S $(SLACK_TOKEN_AWS_COST_CLI) -C $(SLACK_CHANNEL_ID)
+	node ./bin/index.js --access-key "${ACCESS_KEY}" --secret-key "${SECRET_KEY}" --role-arn "${ROLE_ARN}" --region "${AWS_REGION}" --profile "${AWS_PROFILE}" --target-account "${TARGET_ACCOUNT}" -S $(SLACK_TOKEN_AWS_COST_CLI) -C $(SLACK_CHANNEL_ID)
 
 test:
 	pnpm test
