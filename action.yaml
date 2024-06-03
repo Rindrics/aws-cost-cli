@@ -27,6 +27,9 @@ inputs:
   role-arn:
     description: 'AWS role ARN to assume'
     required: false
+  target-account:
+    description: 'Account ID to see cost'
+    required: false
   json:
     description: 'Get the output as JSON'
     required: false
@@ -69,5 +72,5 @@ runs:
       shell: bash
 
     - name: Run AWS Cost CLI
-      run: node ./bin/index.js --profile ${{ inputs.profile }} --access-key ${{ inputs.access-key }} --secret-key ${{ inputs.secret-key }} --session-token ${{ inputs.session-token }} --region ${{ inputs.region }} --role-arn ${{ inputs.role-arn }} --json ${{ inputs.json }} --summary ${{ inputs.summary }} --text ${{ inputs.text }} --slack-token ${{ inputs.slack-token }} --slack-channel ${{ inputs.slack-channel }}
+      run: node ./bin/index.js --profile ${{ inputs.profile }} --access-key ${{ inputs.access-key }} --secret-key ${{ inputs.secret-key }} --session-token ${{ inputs.session-token }} --region ${{ inputs.region }} --role-arn ${{ inputs.role-arn }} --target-account ${{ inputs.target-account }} --json ${{ inputs.json }} --summary ${{ inputs.summary }} --text ${{ inputs.text }} --slack-token ${{ inputs.slack-token }} --slack-channel ${{ inputs.slack-channel }}
       shell: bash
