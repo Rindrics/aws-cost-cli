@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.3.1](https://github.com/Rindrics/aws-cost-cli/compare/v0.3.0...v0.3.1) - 2024-06-03
+- Correct unexpected cost values caused by boundary conditions of query period by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/34
+
 ## [v0.3.0](https://github.com/Rindrics/aws-cost-cli/compare/v0.2.7...v0.3.0) - 2024-06-03
 - Enable role base access to fetch cost information by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/31
 - Accept raw account ID as `--target-account` to query another account under organization by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/33
