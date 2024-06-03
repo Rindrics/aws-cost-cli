@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.3.0](https://github.com/Rindrics/aws-cost-cli/compare/v0.2.8...v0.3.0) - 2024-06-03
+
 ## [v0.2.7](https://github.com/Rindrics/aws-cost-cli/compare/0.2.6...v0.2.7) - 2024-06-01
 - Run CI on pull request by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/1
 - Add missing newline by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/2
