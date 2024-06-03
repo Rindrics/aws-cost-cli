@@ -1,5 +1,6 @@
 import AWS from 'aws-sdk';
-import { getRawCostByService, getTotalCosts, AWSConfig } from './cost';
+import { AWSConfig } from './config'
+import { getRawCostByService, getTotalCosts } from './cost';
 import AWSMock from 'aws-sdk-mock';
 import dayjs from 'dayjs';
 
