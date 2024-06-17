@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.4.1](https://github.com/Rindrics/aws-cost-cli/compare/v0.4.0...v0.4.1) - 2024-06-17
+
 ## [v0.4.0](https://github.com/Rindrics/aws-cost-cli/compare/v0.3.1...v0.4.0) - 2024-06-04
 - Correct command-line arguments by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/37
 - Append `.js` to import path to avoid runtime error by @Rindrics in https://github.com/Rindrics/aws-cost-cli/pull/38
